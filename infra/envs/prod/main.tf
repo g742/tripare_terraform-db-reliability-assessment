@@ -33,8 +33,8 @@ module "ecs" {
   public_subnet_ids  = module.network.public_subnet_ids
   private_subnet_ids = module.network.private_subnet_ids
 
-  container_image = var.container_image
-  container_cpu   = var.container_cpu
+  container_image  = var.container_image
+  container_cpu    = var.container_cpu
   container_memory = var.container_memory
 }
 
@@ -43,8 +43,8 @@ module "rds" {
 
   environment = var.environment
 
-  vpc_id              = module.network.vpc_id
-  private_subnet_ids  = module.network.private_subnet_ids
+  vpc_id                = module.network.vpc_id
+  private_subnet_ids    = module.network.private_subnet_ids
   ecs_security_group_id = module.ecs.ecs_security_group_id
 
   instance_class          = var.rds_instance_class
