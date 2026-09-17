@@ -1,6 +1,8 @@
-# Terraform + Database Reliability Assessment
+Terraform + Database Reliability Assessment
 
-## Architecture
+Configure awscli with access and secret acces key and run db on local
+
+Architecture
 
 Internet
    |
@@ -10,7 +12,7 @@ ECS/Fargate
    |
   RDS PostgreSQL
 
-## Repository Structure
+================== Repository Structure ==================
 
 infra/
   modules/
@@ -33,9 +35,9 @@ docker-compose.yml
 
 .github/workflows/terraform.yml
 
-## Terraform Validation
+ =================== Terraform Validation
 
-### Dev
+         Dev
 
 cd infra/envs/dev
 
@@ -44,7 +46,7 @@ terraform fmt -recursive
 terraform validate
 terraform plan -refresh=false -var-file=dev.tfvars
 
-### Prod
+         Prod
 
 cd infra/envs/prod
 
@@ -123,7 +125,7 @@ SELECT COUNT(*) FROM booking_events;
 | Backup retention | 1 day | 7 days |
 | Deletion protection | false | true |
 
-## AWS Deployment
+AWS Deployment
 
-AWS deployment is intentionally not performed.
+AWS deployment
 Terraform is validated using fmt, init, validate and plan.
